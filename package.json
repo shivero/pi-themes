@@ -1,12 +1,13 @@
 {
-	"name": "@grzechoo/pi-theme-tokyo-night",
+	"name": "@grzechoo/pi-themes",
 	"version": "0.1.0",
-	"description": "Tokyo Night and Catppuccin themes for the Pi coding agent",
+	"description": "Popular dark themes for the Pi coding agent: Tokyo Night, Tokyo Night Storm, Catppuccin Mocha",
 	"keywords": [
 		"pi-package",
 		"pi-theme",
 		"theme",
 		"tokyo-night",
+		"catppuccin",
 		"colorscheme"
 	],
 	"license": "MIT",
@@ -16,6 +17,7 @@
 	},
 	"files": [
 		"themes",
+		"skills",
 		"README.md",
 		"LICENSE"
 	]

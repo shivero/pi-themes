@@ -1,30 +1,6 @@
-# pi-theme-tokyo-night
+# pi-themes
 
-Dark themes for the [Pi](https://pi.dev) coding agent. The Tokyo Night themes
-are mapped from [tokyonight.nvim](https://github.com/folke/tokyonight.nvim)
-v4.14.1: palette colors, syntax roles (`@keyword`, `@operator`, `@type`, …),
-markdown roles and selection/search backgrounds. `catppuccin-mocha` is mapped
-the same way from [catppuccin/nvim](https://github.com/catppuccin/nvim) and
-proves that one package can ship several themes.
-
-## Install
-
-Not published to npm yet, so install straight from this repository:
-
-```sh
-pi install git:ssh://git@forgejo/grzes/pi-theme-tokyo-night.git
-```
-
-Then open `/settings` → **Theme** and pick `tokyo-night` or
-`tokyo-night-storm`.
-
-To uninstall:
-
-```sh
-pi remove git:ssh://git@forgejo/grzes/pi-theme-tokyo-night.git
-```
-
-## Themes
+Popular dark themes for the [Pi](https://pi.dev) coding agent:
 
 | Theme | Appearance | Background |
 | --- | --- | --- |
@@ -32,42 +8,62 @@ pi remove git:ssh://git@forgejo/grzes/pi-theme-tokyo-night.git
 | `tokyo-night-storm` | dark | `#24283b` |
 | `catppuccin-mocha` | dark | `#1e1e2e` |
 
-Every theme defines the full set of roles; each one derives its panel, selection
-and HTML export backgrounds from its own background color.
+Every theme covers the full set of Pi theme roles — interface, messages, tool
+panels, markdown, diffs, syntax highlighting, thinking levels and HTML export.
+Colors are mapped from the upstream palettes: Tokyo Night from
+[tokyonight.nvim](https://github.com/folke/tokyonight.nvim) v4.14.1,
+Catppuccin from [catppuccin/nvim](https://github.com/catppuccin/nvim) (Mocha).
+
+## Install
+
+```sh
+pi install npm:@grzechoo/pi-themes
+```
+
+Pin a version with `pi install npm:@grzechoo/pi-themes@0.1.0`. To declare it for
+one project instead of the user, add `--local`.
+
+## Select a theme
+
+In Pi, open `/settings` → **Theme** and pick `tokyo-night`, `tokyo-night-storm`
+or `catppuccin-mocha`. Pi saves the choice as `"theme": "<name>"` in
+`~/.pi/agent/settings.json`.
+
+For a single run without changing the saved setting:
+
+```sh
+pi --use-theme tokyo-night
+```
 
 ### About the background
 
 Pi themes do not set the terminal background: the TUI draws on the terminal's
 own background color, and a theme only supplies foreground colors and the
-backgrounds of panels, selection and search matches. To get the intended look,
-set your terminal background to the theme's background color — `#1a1b26` for
-`tokyo-night`, `#24283b` for `tokyo-night-storm`, `#1e1e2e` for
-`catppuccin-mocha`. Panel colors are computed from that background, so Storm's
-panels are lighter than Night's.
+backgrounds of panels, selection and search matches. Set your terminal
+background to the theme's color (`#1a1b26`, `#24283b` or `#1e1e2e`) for the
+intended look. Panel colors are computed from that background, so Storm's panels
+are lighter than Night's.
 
-## Palette
+## Install with an agent
 
-| Role | Color |
-| --- | --- |
-| text / variables | `#c0caf5` |
-| secondary text | `#9aa5ce` (muted), `#a9b1d6` (quoted) |
-| comments, dim text | `#565f89` |
-| keyword | `#9d7cd8` |
-| operator | `#89ddff` |
-| function | `#7aa2f7` |
-| type | `#2ac3de` |
-| string | `#9ece6a` |
-| number / constant | `#ff9e64` |
-| error / removed | `#f7768e` |
-| warning | `#e0af68` |
-| success / added | `#9ece6a` |
-| markdown heading, inline code | `#7aa2f7` |
-| markdown link | `#1abc9c` |
-| markdown list bullet | `#ff9e64` |
+The package ships a skill, `install-pi-themes`
+(`skills/install-pi-themes/SKILL.md`), so an agent can do the install for you:
 
-`oklch`/`okhsl` are not used; every value is an sRGB hex color so the themes
-render identically on truecolor and 256-color terminals (Pi approximates the
-latter).
+```text
+/skill:install-pi-themes
+```
+
+or simply ask: "install pi-themes and switch me to tokyo-night". The skill
+covers checking existing installs, `pi install`, verifying with `pi list`,
+selecting the theme (asking you rather than switching silently), the terminal
+background, updates and troubleshooting.
+
+## Updating and uninstalling
+
+```sh
+pi update npm:@grzechoo/pi-themes   # or: pi update --extensions
+pi remove npm:@grzechoo/pi-themes
+```
 
 ## Development
 
@@ -77,9 +73,12 @@ Themes are plain Pi theme JSON files, validated against
 ```text
 themes/tokyo-night.json
 themes/tokyo-night-storm.json
+themes/catppuccin-mocha.json
+skills/install-pi-themes/SKILL.md
 ```
 
-`tokyo-night-theme.md` is the palette reference the themes were mapped from.
+`tokyo-night-theme.md` is the palette reference the Tokyo themes were mapped
+from.
 
 The quickest way to iterate is a local install, which reads this directory
 directly:
@@ -88,14 +87,16 @@ directly:
 pi install /path/to/pi-theme-tokyo-night
 ```
 
-Edit `themes/*.json`, run `/reload`, and the change appears. A `git:` install
-instead clones the repository into `~/.pi/agent/git/…`, so edits made here are
-not the copy Pi loads.
+Edit `themes/*.json`, run `/reload`, and the change appears. A `git:` or npm
+install instead copies the package into the agent directory, so edits made here
+are not the copy Pi loads.
 
 ## Credits
 
-Palette and role mapping follow [tokyonight.nvim](https://github.com/folke/tokyonight.nvim)
-by folke (MIT). This package is not affiliated with that project.
+- Tokyo Night palette and role mapping follow [tokyonight.nvim](https://github.com/folke/tokyonight.nvim) by folke (MIT).
+- Catppuccin palette follows [catppuccin/nvim](https://github.com/catppuccin/nvim) (MIT).
+
+Neither project is affiliated with this package.
 
 ## License
 
