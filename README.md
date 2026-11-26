@@ -1,10 +1,11 @@
 # pi-theme-tokyo-night
 
-Two dark themes for the [Pi](https://pi.dev) coding agent: **Tokyo Night** and
-**Tokyo Night Storm**. Colors are mapped from
-[tokyonight.nvim](https://github.com/folke/tokyonight.nvim) v4.14.1: palette
-colors, syntax roles (`@keyword`, `@operator`, `@type`, …), markdown roles and
-selection/search backgrounds.
+Dark themes for the [Pi](https://pi.dev) coding agent. The Tokyo Night themes
+are mapped from [tokyonight.nvim](https://github.com/folke/tokyonight.nvim)
+v4.14.1: palette colors, syntax roles (`@keyword`, `@operator`, `@type`, …),
+markdown roles and selection/search backgrounds. `catppuccin-mocha` is mapped
+the same way from [catppuccin/nvim](https://github.com/catppuccin/nvim) and
+proves that one package can ship several themes.
 
 ## Install
 
@@ -29,9 +30,10 @@ pi remove git:ssh://git@forgejo/grzes/pi-theme-tokyo-night.git
 | --- | --- | --- |
 | `tokyo-night` | dark | `#1a1b26` |
 | `tokyo-night-storm` | dark | `#24283b` |
+| `catppuccin-mocha` | dark | `#1e1e2e` |
 
-Both use the same syntax and markdown palette; only the background-derived
-colors differ (panels, selection, borders, HTML export backgrounds).
+Every theme defines the full set of roles; each one derives its panel, selection
+and HTML export backgrounds from its own background color.
 
 ### About the background
 
@@ -39,8 +41,9 @@ Pi themes do not set the terminal background: the TUI draws on the terminal's
 own background color, and a theme only supplies foreground colors and the
 backgrounds of panels, selection and search matches. To get the intended look,
 set your terminal background to the theme's background color — `#1a1b26` for
-`tokyo-night`, `#24283b` for `tokyo-night-storm`. Panel colors are computed from
-that background, so Storm's panels are lighter than Night's.
+`tokyo-night`, `#24283b` for `tokyo-night-storm`, `#1e1e2e` for
+`catppuccin-mocha`. Panel colors are computed from that background, so Storm's
+panels are lighter than Night's.
 
 ## Palette
 
