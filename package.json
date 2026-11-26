@@ -13,7 +13,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/shivero/pi-themes"
+    "url": "git+https://github.com/shivero/pi-themes.git"
   },
   "files": [
     "themes",
