@@ -33,6 +33,15 @@ pi remove git:ssh://git@forgejo/grzes/pi-theme-tokyo-night.git
 Both use the same syntax and markdown palette; only the background-derived
 colors differ (panels, selection, borders, HTML export backgrounds).
 
+### About the background
+
+Pi themes do not set the terminal background: the TUI draws on the terminal's
+own background color, and a theme only supplies foreground colors and the
+backgrounds of panels, selection and search matches. To get the intended look,
+set your terminal background to the theme's background color — `#1a1b26` for
+`tokyo-night`, `#24283b` for `tokyo-night-storm`. Panel colors are computed from
+that background, so Storm's panels are lighter than Night's.
+
 ## Palette
 
 | Role | Color |
@@ -68,9 +77,17 @@ themes/tokyo-night-storm.json
 ```
 
 `tokyo-night-theme.md` is the palette reference the themes were mapped from.
-To try a local change without installing, run Pi with
-`--theme themes/tokyo-night.json` or drop the file in
-`~/.pi/agent/themes/<name>.json` and use `/reload`.
+
+The quickest way to iterate is a local install, which reads this directory
+directly:
+
+```sh
+pi install /path/to/pi-theme-tokyo-night
+```
+
+Edit `themes/*.json`, run `/reload`, and the change appears. A `git:` install
+instead clones the repository into `~/.pi/agent/git/…`, so edits made here are
+not the copy Pi loads.
 
 ## Credits
 
