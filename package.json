@@ -1,0 +1,22 @@
+{
+	"name": "@grzechoo/pi-theme-tokyo-night",
+	"version": "0.1.0",
+	"description": "Tokyo Night and Tokyo Night Storm themes for the Pi coding agent",
+	"keywords": [
+		"pi-package",
+		"pi-theme",
+		"theme",
+		"tokyo-night",
+		"colorscheme"
+	],
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "ssh://git@forgejo/grzes/pi-theme-tokyo-night.git"
+	},
+	"files": [
+		"themes",
+		"README.md",
+		"LICENSE"
+	]
+}
