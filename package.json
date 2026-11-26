@@ -18,7 +18,11 @@
   "files": [
     "themes",
     "skills",
+    "assets",
     "README.md",
     "LICENSE"
-  ]
+  ],
+  "pi": {
+    "image": "./assets/hero.png"
+  }
 }

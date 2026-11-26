@@ -1,18 +1,19 @@
 # pi-themes
 
+![pi-themes running in Pi](assets/hero.png)
+
 Popular dark themes for the [Pi](https://pi.dev) coding agent:
 
-| Theme | Appearance | Background |
-| --- | --- | --- |
-| `tokyo-night` | dark | `#1a1b26` |
-| `tokyo-night-storm` | dark | `#24283b` |
-| `catppuccin-mocha` | dark | `#1e1e2e` |
+| Theme               | Appearance |
+| ------------------- | ---------- |
+| `tokyo-night`       | dark       |
+| `tokyo-night-storm` | dark       |
+| `catppuccin-mocha`  | dark       |
 
-Every theme covers the full set of Pi theme roles — interface, messages, tool
+Every theme covers the full set of Pi theme roles - interface, messages, tool
 panels, markdown, diffs, syntax highlighting, thinking levels and HTML export.
-Colors are mapped from the upstream palettes: Tokyo Night from
-[tokyonight.nvim](https://github.com/folke/tokyonight.nvim) v4.14.1,
-Catppuccin from [catppuccin/nvim](https://github.com/catppuccin/nvim) (Mocha).
+
+You don't see your favorite theme? [Open a pull request](https://github.com/shivero/pi-themes/pulls)
 
 ## Install
 
@@ -20,8 +21,7 @@ Catppuccin from [catppuccin/nvim](https://github.com/catppuccin/nvim) (Mocha).
 pi install npm:@grzechoo/pi-themes
 ```
 
-Pin a version with `pi install npm:@grzechoo/pi-themes@0.1.0`. To declare it for
-one project instead of the user, add `--local`.
+Pin a version with `pi install npm:@grzechoo/pi-themes@0.1.9`.
 
 ## Select a theme
 
@@ -34,15 +34,6 @@ For a single run without changing the saved setting:
 ```sh
 pi --use-theme tokyo-night
 ```
-
-### About the background
-
-Pi themes do not set the terminal background: the TUI draws on the terminal's
-own background color, and a theme only supplies foreground colors and the
-backgrounds of panels, selection and search matches. Set your terminal
-background to the theme's color (`#1a1b26`, `#24283b` or `#1e1e2e`) for the
-intended look. Panel colors are computed from that background, so Storm's panels
-are lighter than Night's.
 
 ## Install with an agent
 
@@ -62,7 +53,6 @@ background, updates and troubleshooting.
 
 ```sh
 pi update npm:@grzechoo/pi-themes   # or: pi update --extensions
-pi remove npm:@grzechoo/pi-themes
 ```
 
 ## Development
@@ -74,7 +64,7 @@ Themes are plain Pi theme JSON files, validated against
 themes/tokyo-night.json
 themes/tokyo-night-storm.json
 themes/catppuccin-mocha.json
-skills/install-pi-themes/SKILL.md
+...
 ```
 
 `tokyo-night-theme.md` is the palette reference the Tokyo themes were mapped
