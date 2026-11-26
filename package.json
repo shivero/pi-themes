@@ -1,24 +1,24 @@
 {
-	"name": "@grzechoo/pi-themes",
-	"version": "0.1.0",
-	"description": "Popular dark themes for the Pi coding agent: Tokyo Night, Tokyo Night Storm, Catppuccin Mocha",
-	"keywords": [
-		"pi-package",
-		"pi-theme",
-		"theme",
-		"tokyo-night",
-		"catppuccin",
-		"colorscheme"
-	],
-	"license": "MIT",
-	"repository": {
-		"type": "git",
-		"url": "ssh://git@forgejo/grzes/pi-theme-tokyo-night.git"
-	},
-	"files": [
-		"themes",
-		"skills",
-		"README.md",
-		"LICENSE"
-	]
+  "name": "@grzechoo/pi-themes",
+  "version": "0.1.0",
+  "description": "Popular dark themes for the Pi coding agent: Tokyo Night, Tokyo Night Storm, Catppuccin Mocha",
+  "keywords": [
+    "catppuccin",
+    "colorscheme",
+    "pi-package",
+    "pi-theme",
+    "theme",
+    "tokyo-night"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shivero/pi-themes"
+  },
+  "files": [
+    "themes",
+    "skills",
+    "README.md",
+    "LICENSE"
+  ]
 }
