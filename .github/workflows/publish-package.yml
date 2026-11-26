@@ -22,5 +22,9 @@ jobs:
 
       - name: Check npm version
         run: npm --version
-      - name: Publish
-        run: npm publish --access public --loglevel verbose # Or: npm stage publish
+      # - name: Publish (oidc not working because bug in npm cli https://github.com/npm/cli/issues/9969)
+      # run: npm publish --access public --loglevel verbose # Or: npm stage publish
+      - name: Publish package
+        run: npm publish --provenance --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
